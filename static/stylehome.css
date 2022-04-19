@@ -1,0 +1,25 @@
+*{
+    text-align: center;
+}
+
+
+body{
+    background-color: black;
+}
+
+body h1{
+    color: aliceblue;
+    font-size: xx-large;
+
+}
+body h3{
+    color: burlywood;
+    margin: auto;
+
+}
+p{
+    display: inline-block;
+    width: 50px;
+    border: 1px solid red;
+    text-align: center;
+}
