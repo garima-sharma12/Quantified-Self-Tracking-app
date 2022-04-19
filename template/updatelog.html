@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+    <title>Update log{{tracker.name}}</title>
+</head>
+<body>
+    <h1>Quantified Self</h1>
+    <h3>Hello {{user.fullname}}</h3>
+    <h3>Update log entry here!</h3>
+    <br>
+    <div class="form">
+        <form action="" method="POST">
+           <p> Comment: </p>
+            <br>
+            <input type="text" name="comment" id="comment" value="{{log.comment}}">
+            <br>
+          <p> Value: </p> 
+            <br>
+            <input type="text" name="value" id="value" value="{{log.value}}">
+            <br>
+            <br>
+            <div class="button">
+            <input type="submit" value="Update">
+            </div>
+        </form>
+    </div>
+
+
+   
+</body>
+</html>

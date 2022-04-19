@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tracker.css') }}" />
+    <title>{{tracker.name}}</title>
+</head>
+<body>
+    <h1>Quantified Self</h1>
+    <h3>Hello {{user.fullname}}!</h3>
+    <h3>Create logs for the tracker-{{tracker.name}}</h3>
+   <br>
+    <table border="1">
+        <tr>
+           
+            <th>Comments</th>
+            <th>Value</th>
+            <th>Date created</th>
+            <th>Action</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            
+            <td>{{log.comment}}</td>
+            <td>{{log.value}}</td>
+            <td>{{log.date_created.date()}}</td>
+            <td>
+                <a href="/login/{{user.userid}}/trackers/{{tracker.tid}}/update/{{log.logid}}">Update</a>
+                <a href="/login/{{user.userid}}/trackers/{{tracker.tid}}/delete/{{log.logid}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+
+    <h3>Create new entries!</h3>
+    <div class="formtracker">
+        <form action="/login/{{user.userid}}/trackers/{{tracker.tid}}" method="POST">
+            <p>Comment:</p>
+            <br>
+            <input type="text" name="comment" id="comment">
+            <br><br>
+            <p>Value:</p>
+            <br>
+            <input type="text" name="value" id="value">
+            <br>
+            <div class="button">
+                <input type="submit" value="Add log">
+            </div>
+        </form>
+
+    
+    <br>
+    
+    <img src="/static/graph.png" alt="graph not shown"/>
+    <br>
+    <a href="/login/{{user.userid}}/trackers">Go to trackers.</a>
+    <!-- <a href="#">Click here for graph.</a> -->
+</div>
+</body>
+</html>

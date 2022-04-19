@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+    <title>Sign-up Page</title>
+</head>
+<body>
+    <h1>Quantified self</h1>
+    <h3>Create new account!</h3>
+    <div class="form">
+   <form action="/signup" method="POST" >
+    <p>Name:</p>
+    <input type="text" name="fullname" id="fullname">
+    <p>Username:</p>
+    <input type="text" name="username" id="username">
+    <p>Password:</p>
+    <input type="password" name="password" id="password">
+    <br><br>
+    <div class="button">
+    <input type="submit" value="Sign up">
+    </div>
+   </form>
+    </div>
+
+</body>
+</html>

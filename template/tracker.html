@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tracker.css') }}" />
+    <title>Trackers</title>
+</head>
+<body>
+
+
+    <h3>Welcome {{user.fullname}}!</h3>
+    <h1> Trackers </h1> 
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for tracker in trackers %}
+        <tr>
+            <td><a href="/login/{{user.userid}}/trackers/{{tracker.tid}}">{{ tracker.name }}</a></td>
+            <td>{{ tracker.content }}</td>
+            <td>{{ tracker.type }}</td>
+            <td>{{ tracker.date_created.date() }}</td>
+            <td>
+                <a href="/login/{{user.userid}}/trackers/update/{{tracker.tid}}">Update</a>
+                <br>
+                <a href="/login/{{user.userid}}/trackers/delete/{{tracker.tid}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+
+  <table border="1">
+      <tr>
+          <td>Name</td>
+          {% for tracker in trackers %}
+          <td>{{tracker.name}}</td>
+          {% endfor %}
+      </tr>
+      <tr>
+          <td>description</td>
+          {% for tracker in trackers %}
+          <td>{{tracker.content}}</td>
+          {% endfor %}
+      </tr>
+      <tr>
+          <td>Type</td>
+          {% for tracker in trackers %}
+          <td>{{tracker.type}}</td>
+          {% endfor %}
+      </tr>
+      <tr>
+          <td>Added</td>
+          {% for tracker in trackers %}
+          <td>{{tracker.date_created.date()}}</td>
+          {% endfor %}
+      </tr>
+      <tr>
+          <td>Actions</td>
+          {% for tracker in trackers %}
+          <td>
+            <a href="/login/{{user.userid}}/trackers/update/{{tracker.tid}}">Update</a>
+            <br>
+            <a href="/login/{{user.userid}}/trackers/delete/{{tracker.tid}}">Delete</a>
+        </td>
+        {% endfor %}
+      </tr>
+
+  </table>
+
+
+
+
+    <h3>Create tracker below! </h3> 
+   
+     <div class="formtracker">
+    <form action="/login/{{user.userid}}/trackers" method="POST">
+       <p>Name:</p> 
+        <br> 
+        <input type="text" name="name" id="name">
+        <br>
+       <p> Description:</p>
+        <br>
+        <input type="text" name="content" id="content">
+        <br>
+        <p>Tracker type(unit):</p>
+        <br>
+        <input type="text" name="type" id="type">
+        <div class="button">
+        <input type="submit" value="Add tracker">
+        </div>
+    </form>
+    <a href="/">Log out </a>
+</div>
+</body>
+</html>

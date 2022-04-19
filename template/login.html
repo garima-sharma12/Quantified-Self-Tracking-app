@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+    <title>Login</title>
+</head>
+<body>
+    <h1>Quantified Self</h1>
+    <h3>Login to your account below!</h3>
+    <div class="form">
+    <form action="/login" method="POST">
+        <p>Username:</p>
+        <input type="text" name="username" id="username">
+        <p>Password:</p>
+        <input type="password" name="password" id="password">
+        <br><br>
+        <div class="button">
+        <input type="submit" value="Login">
+        </div>
+    </form>
+    </div>
+    
+</body>
+</html>
