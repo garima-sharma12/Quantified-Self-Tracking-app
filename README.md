@@ -1,6 +1,7 @@
 # Quantified-Self-Tracking-app
 1.Create a virtual environment.
 Use the following commands to create and activate a virtual environment:
+   
    virtualenv venv_name
    /.venv_name/Scripts/activate
 
@@ -10,6 +11,7 @@ Use the following commands to create and activate a virtual environment:
     pip install matplotlib
 
 3. Run the main file and click on the link of the server to open the web page.
-    python app.py
+  
+  python app.py
 
 4. Now the website is ready to use.
