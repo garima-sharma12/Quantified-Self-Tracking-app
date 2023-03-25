@@ -13,9 +13,19 @@ Use the following commands to create and activate a virtual environment:
   pip install flask-SQLAlchemy
   
   pip install matplotlib
+  
+3. To create a database in sqlite3 type the following in the terminal.
 
-3. Run the main file and click on the link of the server to open the web page.
+   python
+   
+   from app import db
+   
+   db.create_all()
+   
+   exit()
+
+4. Run the main file and click on the link of the server to open the web page.
   
   python app.py
 
-4. Now the website is ready to use.
+5. Now the website is ready to use.
