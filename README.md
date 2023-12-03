@@ -16,13 +16,18 @@ Use the following commands to create and activate a virtual environment:
   
 3. Create instance for database files:
    On the terminal type the following commands-
-         python
-         from app import app,db
-         app.app_context().push()
-         db.create_all()
-         exit()
+
+   python
+
+   from app import app,db
+
+   app.app_context().push()
+
+   db.create_all()
+
+   exit()
    
-4. Run the main file and click on the link of the server to open the web page.
+5. Run the main file and click on the link of the server to open the web page.
   
   python app.py
 
