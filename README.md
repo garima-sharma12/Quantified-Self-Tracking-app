@@ -14,9 +14,16 @@ Use the following commands to create and activate a virtual environment:
   
   pip install matplotlib
   
-
-3. Run the main file and click on the link of the server to open the web page.
+3. Create instance for database files:
+   On the terminal type the following commands-
+         python
+         from app import app,db
+         app.app_context().push()
+         db.create_all()
+         exit()
+   
+4. Run the main file and click on the link of the server to open the web page.
   
   python app.py
 
-4. Now the website is ready to use.
+5. Now the website is ready to use.
