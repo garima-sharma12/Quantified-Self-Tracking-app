@@ -13,6 +13,10 @@ Use the following commands to create and activate a virtual environment:
   pip install flask-SQLAlchemy
   
   pip install matplotlib
+
+  OR 
+  You can create a file 'requirements.txt' and list the required libraries.
+  In the terminal run : pip install -r requirements.txt
   
 3. Create instance for database files:
    On the terminal type the following commands-
